@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('TouchUp/', views.paint, name='paint'),
+    path('paintList/', views.renderPaintList, name='paintList'),
+    path('addNewPaint/',views.addNewPaint , name='addNewPaint'),
 ]

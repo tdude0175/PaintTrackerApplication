@@ -1,10 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.http import HttpResponse , Http404
+from .forms import TouchUpPaint , TouchUpForm
 
 def index(request):
-    return HttpResponse("Hello World")
+    return render(request, 'TouchupPaintTracker/index.html')
 
-def paint(request):
-    return HttpResponse("list Paint Here")
+
+def renderPaintList(request):
+    touchUpPaintlist = TouchUpPaint.objects.all()
+    context = {
+        'Paints':touchUpPaintlist
+    }
+    return render(request, 'TouchupPaintTracker/paintList.html',context)
+
+def addNewPaint(request):
+    return render(request, 'TouchupPaintTracker/addNewPaint.html')
 # Create your views here.

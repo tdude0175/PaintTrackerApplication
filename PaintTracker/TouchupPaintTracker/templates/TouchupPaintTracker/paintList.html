@@ -1,0 +1,50 @@
+{% extends 'TouchupPaintTracker/base.html' %}
+
+{% block header %}
+Paint List
+{% endblock header %}
+
+{% block content %}
+{% if Paints %}
+<h2>Listing Paints</h2>
+<table border="1px">
+    <tr>
+        <th>Code</th>
+        <th>Color</th>
+        <th>Model</th>
+        <th>In stock</th>
+        <th>Being used</th>
+    </tr>
+
+    {% for paint in Paints%}
+    <tr>
+    <td>
+        {{paint.paint_code}}
+    </td>
+    <td>
+        {{paint.paint_name}}
+    </td>
+    <td>
+        {{paint.car_model}}
+    </td>
+    <td>
+        {% if paint.is_in_possession %}
+        We have some
+        {% else %}
+        Out of this paint
+        {% endif %}
+    </td>
+    <td>
+        {% if paint.in_use %}
+        It is in use
+        {% else %}
+        no one is using it
+        {% endif %}
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+no Paints to list
+{% endif %}
+{% endblock content %}

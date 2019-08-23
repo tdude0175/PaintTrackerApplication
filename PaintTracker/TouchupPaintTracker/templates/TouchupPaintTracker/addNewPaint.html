@@ -1,0 +1,23 @@
+{% extends 'TouchupPaintTracker/base.html' %}
+
+{% block header %}
+Add New Paint
+{% endblock header %}
+
+{% block content %}
+<form action="#">
+    <p>
+        <label for="paintName">Paints name:</label>
+        <input type="text" id="paintName">
+    </p>
+    <p>
+        <label for="paintCode">Paints Code:</label>
+        <input type="text" id="paintCode">
+    </p>
+    <p>
+        <label for="car model">Model of car:</label>
+        <input type="text" id="car model">
+    </p>
+    <button>Submit</button>
+</form>
+{% endblock content %}

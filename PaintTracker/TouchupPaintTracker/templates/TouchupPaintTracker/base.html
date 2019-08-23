@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TouchUpPaints</title>
+    {% load static %}
+</head>
+<body>
+
+
+<div>
+    <header>
+        <h1>
+        {% block header %}
+        Home Page
+        {% endblock header %}
+        </h1>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'paintList' %}">Paint List</a>
+        <a href="{% url 'addNewPaint' %}">Add some Paint</a>
+    </header>
+    <section>
+        {% block content %}
+        Home Page
+        {% endblock content %}
+    </section>
+</div>
+</body>
+</html>
